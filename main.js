@@ -42,3 +42,12 @@ myPromptManager.addPrompt(
 for (let p of myPromptManager) {
   console.log(p.toString());
 }
+// add ID 1 and 3 to group "MyGroup1"
+myPromptManager.assignGroupToPrompt(1, "MyGroup1");
+myPromptManager.assignGroupToPrompt(3, "MyGroup1");
+
+// Show prompts in "MyGroup1"
+console.log("Prompts in MyGroup1:");
+myPromptManager.getPromptsByGroup("MyGroup1").forEach((prompt) => {
+  console.log(prompt.toString());
+});

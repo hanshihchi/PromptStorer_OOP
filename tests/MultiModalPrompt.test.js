@@ -13,8 +13,8 @@ describe("MultiModalPrompt", () => {
   });
 
   test("should create a MultiModalPrompt instance with attachments", () => {
-    expect(prompt.attachements).toContain(inputAttachment);
-    expect(prompt.attachements).toContain(outputAttachment);
+    expect(prompt.attachments).toContain(inputAttachment);
+    expect(prompt.attachments).toContain(outputAttachment);
   });
 
   test("should return correct string representation with attachments", () => {

@@ -49,3 +49,13 @@ You don't need to implement a front end for this. Keep it simple, don't over thi
 ## Rubric
 
 Please check canvas for the rubric
+
+## New Features
+Grouping Prompts:
+You can now assign a group to each prompt to help with organization.
+* Assigning Groups:
+
+    Prompts can be assigned to groups during creation or updated later using the assignGroupToPrompt method.
+* Retrieving Prompts by Group:
+
+    Use the getPromptsByGroup(groupName) method to retrieve all prompts in a specific group.
