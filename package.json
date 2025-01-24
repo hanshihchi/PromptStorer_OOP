@@ -12,8 +12,8 @@
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Shih-Chi Han",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.18.0",
