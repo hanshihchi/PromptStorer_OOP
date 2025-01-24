@@ -23,12 +23,10 @@ class PromptManager {
   }
 
   sortPrompts(key, order = "asc") {
-    const sorted = [...this.prompts].sort((a, b) => {
-      if (a[key] < b[key]) return order === "asc" ? -1 : 1;
-      if (a[key] > b[key]) return order === "asc" ? 1 : -1;
-      return 0;
+    return [...this.prompts].sort((a, b) => {
+      const direction  = order === "asc" ? 1 : -1;
+      return (a[key] > b[key] ? 1 : -1) * direction ;
     });
-    return sorted;
   }
 
   /**
