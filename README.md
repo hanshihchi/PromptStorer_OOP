@@ -59,3 +59,11 @@ You can now assign a group to each prompt to help with organization.
 * Retrieving Prompts by Group:
 
     Use the getPromptsByGroup(groupName) method to retrieve all prompts in a specific group.
+
+## Using Gen AI experience
+* ChatGPT
+
+    I used it to debug by entering my code and the error message. It might not always give me the right solution, but it gives me some clues to solve the error.
+* GitHub Copilot
+
+    It auto generated the rest of the code for me based on my previous code. Sometimes it generates correctly.

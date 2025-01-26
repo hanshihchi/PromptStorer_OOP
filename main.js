@@ -42,6 +42,7 @@ myPromptManager.addPrompt(
 for (let p of myPromptManager) {
   console.log(p.toString());
 }
+
 // add ID 1 and 3 to group "MyGroup1"
 myPromptManager.assignGroupToPrompt(1, "MyGroup1");
 myPromptManager.assignGroupToPrompt(3, "MyGroup1");

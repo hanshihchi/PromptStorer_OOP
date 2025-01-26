@@ -1,7 +1,7 @@
 import PromptInterface from "./PromptInterface.js";
-import Attachment from "./Attachment.js";
+// import Attachment from "./Attachment.js";
 
-class MultiModalPrompt extends PromptInterface {
+export default class MultiModalPrompt extends PromptInterface {
   constructor({
     id,
     model = "Default Model",
@@ -14,17 +14,8 @@ class MultiModalPrompt extends PromptInterface {
     outputAttachment,
     group = "Default",
   } = {}) {
-    super();
-    this._id = id;
-    this._model = model;
-    this._version = version;
-    this._result = result;
-    this._type = type;
-    this._input = input;
-    this._output = output;
+    super(id, model, version, result, type, input, output, group);
     this._attachments = [inputAttachment, outputAttachment];
-    this._date = new Date();
-    this._group = group;
   }
 
   get id() {
@@ -68,10 +59,11 @@ class MultiModalPrompt extends PromptInterface {
   }
 
   set group(value) {
-    if (typeof value !== "string" || value.trim() === "") {
-      throw new Error("Group must be a non-empty string.");
-    }
-    this._group = value;
+    super.group = value;
+  }
+
+  match(keyword) {
+    return this._input.includes(keyword) || this._output.includes(keyword);
   }
 
   toString() {
@@ -82,5 +74,3 @@ Input Attachment: ${this._attachments[0]}
 Output Attachment: ${this._attachments[1]}`;
   }
 }
-
-export default MultiModalPrompt;

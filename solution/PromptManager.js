@@ -1,4 +1,4 @@
-class PromptManager {
+export default class PromptManager {
   constructor() {
     this.prompts = [];
   }
@@ -20,6 +20,16 @@ class PromptManager {
         return prompt[key] === value;
       });
     });
+  }
+
+  searchByKeyword(keyword) {
+    const resultsPrompts =[];
+    for (const p of this.prompts){
+      if (p.match(keyword)){
+        resultsPrompts.push(p);
+      }
+    }
+    return resultsPrompts;
   }
 
   sortPrompts(key, order = "asc") {
@@ -57,5 +67,3 @@ class PromptManager {
     return this.prompts[Symbol.iterator]();
   }
 }
-
-export default PromptManager;

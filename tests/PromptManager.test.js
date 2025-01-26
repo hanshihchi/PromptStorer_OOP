@@ -73,6 +73,17 @@ describe("PromptManager", () => {
     expect(filtered).toHaveLength(3);
   });
 
+  test("should search prompts by keyword", () => {
+    manager.addPrompt(prompt1);
+    manager.addPrompt(prompt2);
+    manager.addPrompt(prompt3);
+
+    const results = manager.searchByKeyword("What is");
+    expect(results).toHaveLength(2);
+    expect(results[0]).toBe(prompt1);
+    expect(results[1]).toBe(prompt3);
+  });
+
   test("should sort prompts by a key in ascending order", () => {
     manager.addPrompt(prompt3);
     manager.addPrompt(prompt1);
